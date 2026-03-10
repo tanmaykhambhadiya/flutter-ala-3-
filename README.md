@@ -1,96 +1,129 @@
-# Student Management System (Flutter + Hive)
+# Student Management App
 
-This project is a simple Flutter beginner activity submission that demonstrates local CRUD operations using Hive.
+A mini college management system built with Flutter and Hive for local data storage.
 
-## Attached Documentation
+## Student Details
 
-- [Project Documentation PDF](documnetataon.pdf)
-ne 
-## Objective
+- Name: Tanmay Khambhadiya
+- Enrollment: 20230905050507
 
-Implement a basic Student Management System with local storage support.
+## Project Overview
 
-## Features Implemented
+This app is upgraded from a simple CRUD demo into a practical student administration tool.
+It manages:
 
-- Add Student
-- View Students
-- Update Student
-- Local data persistence using Hive
+- Student records
+- Attendance tracking
+- Department and semester data
+- Dashboard statistics and charts
 
-Each student record stores:
+## Core Features
 
-- Student Name
-- Enrollment Number
-- Course
+- Dashboard with summary cards:
+	- Total students
+	- Male students
+	- Female students
+	- Average attendance
+- Add and edit student with detailed fields:
+	- Name
+	- Enrollment number
+	- Department
+	- Semester
+	- Email
+	- Phone number
+	- Gender
+- Student profile screen with full details
+- Attendance management by subject (Present/Absent)
+- Search by name or enrollment
+- Filter by department and semester
+- Statistics charts using `fl_chart`:
+	- Students per department
+	- Students per semester
+
+## Application Workflow
+
+1. App launch
+- `main.dart` initializes Hive and opens the `students` box.
+- User lands on the Dashboard screen.
+
+2. Dashboard
+- Summary cards are generated from stored student records.
+- Charts visualize department and semester distribution.
+- User can navigate to Add Student or Student List.
+
+3. Add Student
+- User fills in the student form.
+- Data is validated and saved to Hive.
+- User returns to Dashboard/List with updated data.
+
+4. Student List
+- All students are shown in card format.
+- Search and filters narrow the student list.
+- User can open profile or edit directly.
+
+5. Student Profile
+- Displays complete student information.
+- User can edit, delete, or open attendance screen.
+
+6. Attendance Screen
+- User adds subjects.
+- For each subject, attendance is marked Present/Absent.
+- Percentage is calculated automatically and reflected across app screens.
 
 ## Tech Stack
 
 - Flutter
 - Dart
 - Hive (`hive`, `hive_flutter`)
+- Charts: `fl_chart`
 
 ## Project Structure
 
 ```text
-lib
-|- main.dart
-|- models
-|  |- student_model.dart
-|- screens
-|  |- home_screen.dart
-|  |- add_student.dart
-|  |- student_list.dart
+lib/
+	main.dart
+	models/
+		student_model.dart
+	services/
+		database_service.dart
+	screens/
+		dashboard.dart
+		add_student.dart
+		student_list.dart
+		student_profile.dart
+		attendance_screen.dart
+	widgets/
+		summary_card.dart
+		student_card.dart
 ```
-
-## CRUD Mapping
-
-- Create (Store): `box.add(student.toMap())`
-- Read (Retrieve): `box.getAt(index)` and `box.length`
-- Update: `box.putAt(index, student.toMap())`
 
 ## How to Run
 
-1. Install dependencies:
-
 ```bash
 flutter pub get
+flutter run
 ```
 
-2. Check available devices:
+Optional checks:
 
 ```bash
-flutter devices
+flutter analyze
 ```
-
-3. Run app:
-
-```bash
-flutter run -d chrome
-```
-
-Optional (Windows desktop):
-
-```bash
-flutter run -d windows
-```
-
-Note: Windows desktop build requires Visual Studio Build Tools with "Desktop development with C++" workload.
 
 ## Screenshots
 
-### Home Screen
+### Dashboard
 
-![Home Screen](Screenshot%202026-03-10%20200112.png)
+![Dashboard](Screenshot%202026-03-10%20235203.png)
 
-### Add Student Screen
+### Student List / Filters
 
-![Add Student Screen](Screenshot%202026-03-10%20200139.png)
+![Student List](Screenshot%202026-03-10%20235251.png)
 
-### Student List Screen
+### Student Profile / Attendance
 
-![Student List Screen](Screenshot%202026-03-10%20200151.png)
+![Student Profile](Screenshot%202026-03-10%20235306.png)
 
-## Submission Summary
+## Documentation
 
-This activity successfully demonstrates a basic Flutter Student Management System with Hive-based local storage and CRUD functionality suitable for beginner-level submission.
-# flutter-ala-3-
+- [Project Documentation PDF](documnetataon.pdf)
