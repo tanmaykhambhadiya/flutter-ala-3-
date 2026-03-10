@@ -2,6 +2,10 @@
 
 This project is a simple Flutter beginner activity submission that demonstrates local CRUD operations using Hive.
 
+## Attached Documentation
+
+- [Project Documentation PDF](documnetataon.pdf)
+ne 
 ## Objective
 
 Implement a basic Student Management System with local storage support.
@@ -85,10 +89,6 @@ Note: Windows desktop build requires Visual Studio Build Tools with "Desktop dev
 ### Student List Screen
 
 ![Student List Screen](Screenshot%202026-03-10%20200151.png)
-
-## Attached Documentation
-
-- [Project Documentation PDF](documnetataon.pdf)
 
 ## Submission Summary
 
